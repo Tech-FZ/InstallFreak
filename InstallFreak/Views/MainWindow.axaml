@@ -1,0 +1,36 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:InstallFreak.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="InstallFreak.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="InstallFreak">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <Grid HorizontalAlignment="Center" 
+      VerticalAlignment="Center" 
+      Width="425" 
+      Height="165"
+      ColumnDefinitions="Auto,*,*,*,*"
+      RowDefinitions="Auto,Auto,*,Auto">
+        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" 
+                   Text="Welcome to InstallFreak!" FontSize="20" HorizontalAlignment="Center"
+                   TextWrapping="Wrap" />
+               
+        <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" TextWrapping="Wrap"
+            Text="InstallFreak will be your guide for the InstallFreak setup." />
+    
+        <Button Grid.Row="3" Grid.Column="1" Content="OK" Margin="10,0,10,15" />
+    
+        <Button Grid.Row="3" Grid.Column="3" Content="Cancel" Margin="10,0,10,15" /> 
+    </Grid>
+
+</Window>
