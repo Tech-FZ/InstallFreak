@@ -1,0 +1,24 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="InstallFreak.Views.IFP1">
+  <Grid HorizontalAlignment="Center" 
+      VerticalAlignment="Center" 
+      Width="750" 
+      Height="400"
+      ColumnDefinitions="Auto,*,*,*,*"
+      RowDefinitions="Auto,Auto,*,Auto">
+        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" 
+                   Text="Welcome to InstallFreak!" FontSize="20" HorizontalAlignment="Center"
+                   TextWrapping="Wrap" Margin="10,0,10,15" />
+               
+        <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" TextWrapping="Wrap" Margin="10,0,10,15"
+            Text="InstallFreak will be your guide for the InstallFreak setup." HorizontalAlignment="Center" />
+    
+        <Button Grid.Row="3" Grid.Column="1" Content="OK" Margin="10,0,10,15" />
+    
+        <Button Grid.Row="3" Grid.Column="3" Content="Cancel" Margin="10,0,10,15" /> 
+    </Grid>
+</UserControl>
