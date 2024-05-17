@@ -23,10 +23,10 @@
       RowDefinitions="Auto,Auto,*,Auto">
         <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" 
                    Text="Welcome to InstallFreak!" FontSize="20" HorizontalAlignment="Center"
-                   TextWrapping="Wrap" />
+                   TextWrapping="Wrap" Margin="10,0,10,15" />
                
-        <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" TextWrapping="Wrap"
-            Text="InstallFreak will be your guide for the InstallFreak setup." />
+        <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" TextWrapping="Wrap" Margin="10,0,10,15"
+            Text="InstallFreak will be your guide for the InstallFreak setup." HorizontalAlignment="Center" />
     
         <Button Grid.Row="3" Grid.Column="1" Content="OK" Margin="10,0,10,15" />
     
