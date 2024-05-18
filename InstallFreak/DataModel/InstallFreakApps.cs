@@ -2,6 +2,7 @@ using System;
 
 namespace InstallFreak.DataModel {
     public class InstallFreakApps {
+        public bool ToInstall {get; set;}
         public string AppName {get; set;}
         public string AppVer {get; set;}
         public string AppDL {get; set;}
@@ -9,7 +10,8 @@ namespace InstallFreak.DataModel {
         public string AppSHA512 {get; set;}
         public string Notes {get; set;}
 
-        public InstallFreakApps(string appName, string appVer, string appDL, string appSHA256, string appSHA512, string notes) {
+        public InstallFreakApps(bool toInstall, string appName, string appVer, string appDL, string appSHA256, string appSHA512, string notes) {
+            ToInstall = toInstall;
             AppName = appName;
             AppVer = appVer;
             AppDL = appDL;

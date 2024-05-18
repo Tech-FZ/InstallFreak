@@ -1,5 +1,9 @@
 # InstallFreak Changelog
 
+## Version 0.0.2.4_proto
+
+- The second page has been adjusted and the table on there is made more useful.
+
 ## Version 0.0.2.3_proto
 
 - The View Model has been altered for InstallFreak.

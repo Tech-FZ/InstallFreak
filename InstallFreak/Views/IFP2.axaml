@@ -16,8 +16,17 @@
                    TextWrapping="Wrap" Margin="10,0,10,15" />
     
         <DataGrid Margin="20" ItemsSource="{Binding AppList}" AutoGenerateColumns="True"
-                    IsReadOnly="True" GridLinesVisibility="All" BorderThickness="1"
+                    Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" GridLinesVisibility="All" BorderThickness="1"
                     BorderBrush="Gray">
+          <DataGrid.Columns>
+            <DataGridCheckBoxColumn Header="Install" Binding="{Binding ToInstall}" IsReadOnly="False" />
+            <DataGridTextColumn Header="Name" Binding="{Binding AppName}" IsReadOnly="True" />
+            <DataGridTextColumn Header="Version" Binding="{Binding AppVer}" IsReadOnly="True" />
+            <DataGridTextColumn Header="Download Link" Binding="{Binding AppDL}" IsReadOnly="True" />
+            <DataGridTextColumn Header="SHA256 Link" Binding="{Binding AppSHA256}" IsReadOnly="True" />
+            <DataGridTextColumn Header="SHA512 Link" Binding="{Binding AppSHA512}" IsReadOnly="True" />
+            <DataGridTextColumn Header="Notes" Binding="{Binding Notes}" IsReadOnly="True" />
+          </DataGrid.Columns>
         </DataGrid>
 
         <Button Grid.Row="3" Grid.Column="1" Content="Previous" Margin="10,0,10,15" />
