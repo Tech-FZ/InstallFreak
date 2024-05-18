@@ -4,7 +4,9 @@
 
 - The View Model has been altered for InstallFreak.
 - A second page is in preparation.
-- The first page has been adjusted and instead of "OK", that button says "Next >".
+- The first page has been adjusted and instead of "OK", that button says "Next".
+- The Main Window opens to the second page by default (for now).
+- I had to get rid of some unnecessary files and change the entire backend code so that the second page works at all.
 
 ## Version 0.0.1.2_proto
 

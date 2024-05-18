@@ -16,6 +16,6 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <views:IFP1 />
+    <views:IFP2 />
 
 </Window>

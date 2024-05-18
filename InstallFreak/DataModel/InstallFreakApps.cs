@@ -2,11 +2,20 @@ using System;
 
 namespace InstallFreak.DataModel {
     public class InstallFreakApps {
-        public string AppName {get; set;} = String.Empty;
-        public string AppVer {get; set;} = String.Empty;
-        public string AppDL {get; set;} = String.Empty;
-        public string AppSHA256 {get; set;} = String.Empty;
-        public string AppSHA512 {get; set;} = String.Empty;
-        public string Notes {get; set;} = String.Empty;
+        public string AppName {get; set;}
+        public string AppVer {get; set;}
+        public string AppDL {get; set;}
+        public string AppSHA256 {get; set;}
+        public string AppSHA512 {get; set;}
+        public string Notes {get; set;}
+
+        public InstallFreakApps(string appName, string appVer, string appDL, string appSHA256, string appSHA512, string notes) {
+            AppName = appName;
+            AppVer = appVer;
+            AppDL = appDL;
+            AppSHA256 = appSHA256;
+            AppSHA512 = appSHA512;
+            Notes = notes;
+        }
     }
 }
