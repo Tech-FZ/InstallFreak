@@ -5,7 +5,7 @@
 - The second page has been adjusted and the table on there is made more useful.
 - I tried to further improve the layout of the second page.
 - You would also be able to set the installation path on the second page.
-- The column definitions on the grid of the second page have been adjusted.
+- The row and column definitions on the grid of the second page have been adjusted.
 
 ## Version 0.0.2.3_proto
 

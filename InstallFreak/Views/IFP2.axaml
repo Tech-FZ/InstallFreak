@@ -10,7 +10,7 @@
       Width="750" 
       Height="400"
       ColumnDefinitions="Auto,*,*,*,*,*,*"
-      RowDefinitions="Auto,Auto,*,Auto">
+      RowDefinitions="Auto,Auto,20,Auto">
         <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" 
                    Text="Choose what to install" FontSize="20" HorizontalAlignment="Center"
                    TextWrapping="Wrap" Margin="10,0,10,15" />
@@ -30,7 +30,7 @@
         </DataGrid>
 
         <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" TextWrapping="Wrap" Margin="10,0,10,15"
-            Text="Install Path" HorizontalAlignment="Left" />
+            Text="Install Path" HorizontalAlignment="Left" VerticalAlignment="Top" />
 
         <TextBox Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="5" Height="20" VerticalAlignment="Top" />
 
