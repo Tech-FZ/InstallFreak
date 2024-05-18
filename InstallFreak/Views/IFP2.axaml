@@ -23,9 +23,9 @@
           </ItemsControl.ItemTemplate>  
         </ItemsControl>
     
-        <Button Grid.Row="3" Grid.Column="1" Content="Previous" Margin="10,0,10,15" />
+        <Button Grid.Row="3" Grid.Column="1" Content="< Previous" Margin="10,0,10,15" />
         
-        <Button Grid.Row="3" Grid.Column="2" Content="Next" Margin="10,0,10,15" />
+        <Button Grid.Row="3" Grid.Column="2" Content="Next >" Margin="10,0,10,15" />
     
         <Button Grid.Row="3" Grid.Column="3" Content="Cancel" Margin="10,0,10,15" /> 
     </Grid>

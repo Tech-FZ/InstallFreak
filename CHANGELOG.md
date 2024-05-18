@@ -4,6 +4,7 @@
 
 - The View Model has been altered for InstallFreak.
 - A second page is in preparation.
+- The first page has been adjusted and instead of "OK", that button says "Next >".
 
 ## Version 0.0.1.2_proto
 
