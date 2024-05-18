@@ -1,8 +1,14 @@
-﻿namespace InstallFreak.ViewModels;
+﻿using InstallFreak.Services;
 
-public class MainWindowViewModel : ViewModelBase
-{
-#pragma warning disable CA1822 // Mark members as static
-    //public string Greeting => "Welcome to InstallFreak!";
-#pragma warning restore CA1822 // Mark members as static
+namespace InstallFreak.ViewModels {
+    public class MainWindowViewModel : ViewModelBase {
+        public MainWindowViewModel() {
+            var service = new IFService();
+            IFAppList = new IFViewModel(service.GetItems());
+        }
+
+        public IFViewModel IFAppList {get;}
+    }
 }
+
+

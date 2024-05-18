@@ -1,5 +1,9 @@
 # InstallFreak Changelog
 
+## Version 0.0.2.3_proto
+
+- The View Model has been altered for InstallFreak.
+
 ## Version 0.0.1.2_proto
 
 - Changes to the layout of the first page have been made.
