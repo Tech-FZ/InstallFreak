@@ -34,10 +34,13 @@
 
         <TextBox Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="5" />
 
-        <Button Grid.Row="3" Grid.Column="4" HorizontalAlignment="Stretch" Content="Previous" Margin="10,0,10,15" />
+        <Button Grid.Row="3" Grid.Column="4" HorizontalAlignment="Stretch" Content="Previous"
+          HorizontalContentAlignment="Center" Margin="10,0,10,15" />
         
-        <Button Grid.Row="3" Grid.Column="5" HorizontalAlignment="Stretch" Content="Next" Margin="10,0,10,15" />
+        <Button Grid.Row="3" Grid.Column="5" HorizontalAlignment="Stretch" Content="Next"
+          HorizontalContentAlignment="Center" Margin="10,0,10,15" />
     
-        <Button Grid.Row="3" Grid.Column="6" HorizontalAlignment="Stretch" Content="Cancel" Margin="10,0,10,15" /> 
+        <Button Grid.Row="3" Grid.Column="6" HorizontalAlignment="Stretch" Content="Cancel"
+          HorizontalContentAlignment="Center" Margin="10,0,10,15" /> 
     </Grid>
 </UserControl>
