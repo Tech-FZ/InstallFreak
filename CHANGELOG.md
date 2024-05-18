@@ -7,6 +7,7 @@
 - You would also be able to set the installation path on the second page.
 - The row and column definitions on the grid of the second page have been adjusted.
 - The data grid has been adjusted.
+- The installation path setting also comes with a Browse button.
 
 ## Version 0.0.2.3_proto
 
