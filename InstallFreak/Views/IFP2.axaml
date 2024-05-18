@@ -15,7 +15,7 @@
                    Text="Choose what to install" FontSize="20" HorizontalAlignment="Center"
                    TextWrapping="Wrap" Margin="10,0,10,15" />
     
-        <DataGrid Margin="20" ItemsSource="{Binding AppList}" AutoGenerateColumns="True"
+        <DataGrid Margin="20" ItemsSource="{Binding AppList}"
                     Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" GridLinesVisibility="All" BorderThickness="1"
                     BorderBrush="Gray">
           <DataGrid.Columns>
