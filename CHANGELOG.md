@@ -3,6 +3,7 @@
 ## Version 0.0.2.3_proto
 
 - The View Model has been altered for InstallFreak.
+- A second page is in preparation.
 
 ## Version 0.0.1.2_proto
 

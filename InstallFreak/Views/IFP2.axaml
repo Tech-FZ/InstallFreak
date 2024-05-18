@@ -1,0 +1,32 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="InstallFreak.Views.IFP2"
+             x:DataType="vm:IFViewModel">
+  <Grid HorizontalAlignment="Center" 
+      VerticalAlignment="Center" 
+      Width="750" 
+      Height="400"
+      ColumnDefinitions="Auto,*,*,*,*"
+      RowDefinitions="Auto,Auto,*,Auto">
+        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" 
+                   Text="Choose what to install" FontSize="20" HorizontalAlignment="Center"
+                   TextWrapping="Wrap" Margin="10,0,10,15" />
+               
+        <ItemsControl ItemsSource="{Binding AppList}">
+          <ItemsControl.ItemTemplate>
+            <DataTemplate>
+              <RadioButton GroupName="Apps" Content="{Binding AppName}">  
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>  
+        </ItemsControl>
+    
+        <Button Grid.Row="3" Grid.Column="1" Content="Previous" Margin="10,0,10,15" />
+        
+        <Button Grid.Row="3" Grid.Column="2" Content="Next" Margin="10,0,10,15" />
+    
+        <Button Grid.Row="3" Grid.Column="3" Content="Cancel" Margin="10,0,10,15" /> 
+    </Grid>
+</UserControl>
