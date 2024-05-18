@@ -9,7 +9,7 @@
       VerticalAlignment="Center" 
       Width="750" 
       Height="400"
-      ColumnDefinitions="Auto,*,*,*,*"
+      ColumnDefinitions="Auto,*,*,*,*,*,*"
       RowDefinitions="Auto,Auto,*,Auto">
         <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" 
                    Text="Choose what to install" FontSize="20" HorizontalAlignment="Center"
@@ -32,12 +32,12 @@
         <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" TextWrapping="Wrap" Margin="10,0,10,15"
             Text="Install Path" HorizontalAlignment="Left" />
 
-        <TextBox Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="5" />
+        <TextBox Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="4" />
 
-        <Button Grid.Row="3" Grid.Column="1"  Content="Previous" Margin="10,0,10,15" />
+        <Button Grid.Row="3" Grid.Column="4"  Content="Previous" Margin="10,0,10,15" />
         
-        <Button Grid.Row="3" Grid.Column="3" Content="Next" Margin="10,0,10,15" />
+        <Button Grid.Row="3" Grid.Column="5" Content="Next" Margin="10,0,10,15" />
     
-        <Button Grid.Row="3" Grid.Column="5" Content="Cancel" Margin="10,0,10,15" /> 
+        <Button Grid.Row="3" Grid.Column="6" Content="Cancel" Margin="10,0,10,15" /> 
     </Grid>
 </UserControl>
