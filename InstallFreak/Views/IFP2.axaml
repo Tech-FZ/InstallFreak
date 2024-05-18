@@ -29,6 +29,11 @@
           </DataGrid.Columns>
         </DataGrid>
 
+        <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" TextWrapping="Wrap" Margin="10,0,10,15"
+            Text="Install Path" HorizontalAlignment="Left" />
+
+        <TextBox Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="5" />
+
         <Button Grid.Row="3" Grid.Column="1"  Content="Previous" Margin="10,0,10,15" />
         
         <Button Grid.Row="3" Grid.Column="3" Content="Next" Margin="10,0,10,15" />
