@@ -11,12 +11,12 @@
       Height="400"
       ColumnDefinitions="Auto,*,*,*,*"
       RowDefinitions="Auto,Auto,*,Auto">
-        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="9" 
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" 
                    Text="Choose what to install" FontSize="20" HorizontalAlignment="Center"
                    TextWrapping="Wrap" Margin="10,0,10,15" />
     
         <DataGrid Margin="20" ItemsSource="{Binding AppList}" AutoGenerateColumns="True"
-                    Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="9" GridLinesVisibility="All" BorderThickness="1"
+                    Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" GridLinesVisibility="All" BorderThickness="1"
                     BorderBrush="Gray">
           <DataGrid.Columns>
             <DataGridCheckBoxColumn Header="Install" Binding="{Binding ToInstall}" IsReadOnly="False" />
@@ -29,10 +29,10 @@
           </DataGrid.Columns>
         </DataGrid>
 
-        <Button Grid.Row="3" Grid.Column="3"  Content="Previous" Margin="10,0,10,15" />
+        <Button Grid.Row="3" Grid.Column="1"  Content="Previous" Margin="10,0,10,15" />
         
-        <Button Grid.Row="3" Grid.Column="5" Content="Next" Margin="10,0,10,15" />
+        <Button Grid.Row="3" Grid.Column="3" Content="Next" Margin="10,0,10,15" />
     
-        <Button Grid.Row="3" Grid.Column="7" Content="Cancel" Margin="10,0,10,15" /> 
+        <Button Grid.Row="3" Grid.Column="5" Content="Cancel" Margin="10,0,10,15" /> 
     </Grid>
 </UserControl>
