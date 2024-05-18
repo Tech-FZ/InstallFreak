@@ -3,6 +3,7 @@
 ## Version 0.0.2.4_proto
 
 - The second page has been adjusted and the table on there is made more useful.
+- I tried to further improve the layout of the second page.
 
 ## Version 0.0.2.3_proto
 
