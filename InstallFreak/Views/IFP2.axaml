@@ -32,7 +32,7 @@
         <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" TextWrapping="Wrap" Margin="10,0,10,15"
             Text="Install Path" HorizontalAlignment="Left" />
 
-        <TextBox Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="5" />
+        <TextBox Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="5" Height="20" />
 
         <Button Grid.Row="3" Grid.Column="4" HorizontalAlignment="Stretch" Content="Previous"
           HorizontalContentAlignment="Center" Margin="10,0,10,15" />
