@@ -17,8 +17,10 @@
         <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" TextWrapping="Wrap" Margin="10,0,10,15"
             Text="InstallFreak will be your guide for the InstallFreak setup." HorizontalAlignment="Center" />
     
-        <Button Grid.Row="3" Grid.Column="2" Content="Next" Margin="10,0,10,15" />
+        <Button Grid.Row="3" Grid.Column="2" HorizontalAlignment="Stretch" Content="Next" Margin="10,0,10,15"
+        HorizontalContentAlignment="Center" />
     
-        <Button Grid.Row="3" Grid.Column="3" Content="Cancel" Margin="10,0,10,15" /> 
+        <Button Grid.Row="3" Grid.Column="3" HorizontalAlignment="Stretch" Content="Cancel" Margin="10,0,10,15"
+        HorizontalContentAlignment="Center" /> 
     </Grid>
 </UserControl>

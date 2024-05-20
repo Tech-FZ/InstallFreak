@@ -3,6 +3,7 @@
 ## Version 0.0.2.5_proto
 
 - The program welcomes you on the first page again.
+- The layout on the first page has been adjusted a little.
 
 ## Version 0.0.2.4_proto
 
