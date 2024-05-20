@@ -44,6 +44,6 @@
           HorizontalContentAlignment="Center" Margin="10,0,10,15" />
     
         <Button Grid.Row="3" Grid.Column="6" HorizontalAlignment="Stretch" Content="Cancel"
-          HorizontalContentAlignment="Center" Margin="10,0,10,15" /> 
+          HorizontalContentAlignment="Center" Margin="10,0,10,15" Click="CloseProgram" /> 
     </Grid>
 </UserControl>

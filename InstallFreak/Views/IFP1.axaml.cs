@@ -18,4 +18,10 @@ public partial class IFP1 : UserControl
         Window mainwin = (Window)this.GetVisualRoot();
         mainwin.Content = new IFP2();
     }
+
+    public void CloseProgram(object sender, RoutedEventArgs args)
+    {
+        Window mainwin = (Window)this.GetVisualRoot();
+        mainwin.Close();
+    }
 }

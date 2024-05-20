@@ -21,6 +21,6 @@
         HorizontalContentAlignment="Center" Click="ChangeToSecondPage" />
     
         <Button Grid.Row="3" Grid.Column="3" HorizontalAlignment="Stretch" Content="Cancel" Margin="10,0,10,15"
-        HorizontalContentAlignment="Center" /> 
+        HorizontalContentAlignment="Center" Click="CloseProgram" /> 
     </Grid>
 </UserControl>
