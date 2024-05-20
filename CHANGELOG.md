@@ -5,6 +5,7 @@
 - The program welcomes you on the first page again.
 - The layout on the first page has been adjusted a little.
 - The Next button on the first page is now functional.
+- The Previous button on the second page is also functional.
 
 ## Version 0.0.2.4_proto
 

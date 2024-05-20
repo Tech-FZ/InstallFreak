@@ -2,6 +2,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using Avalonia.VisualTree;
 
 namespace InstallFreak.Views;
 
@@ -14,6 +15,7 @@ public partial class IFP1 : UserControl
 
     public void ChangeToSecondPage(object sender, RoutedEventArgs args)
     {
-        (Parent as Window).Content = new IFP2();
+        Window mainwin = (Window)this.GetVisualRoot();
+        mainwin.Content = new IFP2();
     }
 }

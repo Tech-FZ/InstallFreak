@@ -38,7 +38,7 @@
           HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="32" Margin="10,0,10,15" />
 
         <Button Grid.Row="3" Grid.Column="4" HorizontalAlignment="Stretch" Content="Previous"
-          HorizontalContentAlignment="Center" Margin="10,0,10,15" />
+          HorizontalContentAlignment="Center" Margin="10,0,10,15" Click="ChangeToFirstPage" />
         
         <Button Grid.Row="3" Grid.Column="5" HorizontalAlignment="Stretch" Content="Next"
           HorizontalContentAlignment="Center" Margin="10,0,10,15" />
