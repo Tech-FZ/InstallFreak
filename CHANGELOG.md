@@ -1,5 +1,9 @@
 # InstallFreak Changelog
 
+## Version 0.0.2.5_proto
+
+- The program welcomes you on the first page again.
+
 ## Version 0.0.2.4_proto
 
 - The second page has been adjusted and the table on there is made more useful.
