@@ -1,5 +1,10 @@
 # InstallFreak Changelog
 
+## Version 0.0.3.6_proto
+
+- The third page has been created as a summary page.
+- Clicking "Next" on the second page now redirects to that third page.
+
 ## Version 0.0.2.5_proto
 
 - The program welcomes you on the first page again.
