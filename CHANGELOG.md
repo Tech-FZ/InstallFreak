@@ -1,5 +1,9 @@
 # InstallFreak Changelog
 
+## Version 0.0.4.7_proto
+
+- The page which actually installs the program is in the works.
+
 ## Version 0.0.3.6_proto
 
 - The third page has been created as a summary page.

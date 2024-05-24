@@ -27,7 +27,7 @@
           HorizontalContentAlignment="Center" Margin="10,0,10,15" Click="ChangeToSecondPage" />
         
         <Button Grid.Row="4" Grid.Column="5" HorizontalAlignment="Stretch" Content="Install"
-          HorizontalContentAlignment="Center" Margin="10,0,10,15" />
+          HorizontalContentAlignment="Center" Margin="10,0,10,15" Click="InstProg" />
     
         <Button Grid.Row="4" Grid.Column="6" HorizontalAlignment="Stretch" Content="Cancel"
           HorizontalContentAlignment="Center" Margin="10,0,10,15" Click="CloseProgram" /> 

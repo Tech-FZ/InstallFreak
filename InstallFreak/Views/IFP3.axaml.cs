@@ -36,6 +36,11 @@ public partial class IFP3 : UserControl
         mainwin.Content = new IFP2();
     }
 
+    public void InstProg(object sender, RoutedEventArgs args) {
+        Window mainwin = (Window)this.GetVisualRoot();
+        mainwin.Content = new IFP3(appName, appVer, appDl, appSha256, appSha512, instPath);
+    }
+
     public void CloseProgram(object sender, RoutedEventArgs args)
     {
         Window mainwin = (Window)this.GetVisualRoot();
