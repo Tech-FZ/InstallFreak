@@ -13,6 +13,7 @@ using Microsoft.Extensions.Logging;
 using Autofac;
 using Microsoft.Extensions.Configuration;
 using NUnit.Framework;
+using System.Security.Cryptography;
 
 namespace InstallFreak.Views;
 
@@ -108,6 +109,7 @@ public partial class IFPInst : UserControl
             var engine = engineContainer.Resolve<IEngine>();
             engine.DownloadFile(toDownload, saveTo, _pauseTokenSource, _cancelTokenSource).Wait();
         }
+
         catch
         {
             // ignored
@@ -132,6 +134,21 @@ public partial class IFPInst : UserControl
 
             try {
                 DownloadEngine(appSha256, $"{downloadLocation}/{appName}_{appVer}.zip.sha256");
+                using StreamReader reader = new($"{downloadLocation}/{appName}_{appVer}.zip.sha256");
+                string text = reader.ReadToEnd();
+                string[] shaSplit = text.Split("  ");
+                FileStream filestream;
+                SHA256 sha256mod = SHA256.Create();
+                filestream = new FileStream($"{downloadLocation}/{appName}_{appVer}.zip", FileMode.Open);
+                filestream.Position = 0;
+                byte[] hashValue = sha256mod.ComputeHash(filestream);
+                string hashStr = BitConverter.ToString(hashValue).Replace("-", String.Empty);
+                
+                if (hashStr != shaSplit[0]) {
+                    //insert code for aborting installation
+                }
+
+                filestream.Close();
             }
 
             catch (Exception ex) {
@@ -146,6 +163,21 @@ public partial class IFPInst : UserControl
 
             try {
                 DownloadEngine(appSha512, $"{downloadLocation}/{appName}_{appVer}.zip.sha512");
+                using StreamReader reader = new($"{downloadLocation}/{appName}_{appVer}.zip.sha512");
+                string text = reader.ReadToEnd();
+                string[] shaSplit = text.Split("  ");
+                FileStream filestream;
+                SHA512 sha512mod = SHA512.Create();
+                filestream = new FileStream($"{downloadLocation}/{appName}_{appVer}.zip", FileMode.Open);
+                filestream.Position = 0;
+                byte[] hashValue = sha512mod.ComputeHash(filestream);
+                string hashStr = BitConverter.ToString(hashValue).Replace("-", String.Empty);
+                
+                if (hashStr != shaSplit[0]) {
+                    //insert code for aborting installation
+                }
+
+                filestream.Close();
             }
 
             catch (Exception ex) {
