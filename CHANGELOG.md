@@ -5,6 +5,7 @@
 - Instead of the depreciated WebClient, OctaneDownloader is used.
 - The verification process is in the woks.
 - Some minor corrections to the download location setter have been made.
+- If everything works correctly, the installer itself would do its job now.
 
 ## Version 0.0.4.7_proto
 

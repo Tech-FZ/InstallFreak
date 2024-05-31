@@ -14,6 +14,7 @@ using Autofac;
 using Microsoft.Extensions.Configuration;
 using NUnit.Framework;
 using System.Security.Cryptography;
+using System.IO.Compression;
 
 namespace InstallFreak.Views;
 
@@ -192,11 +193,17 @@ public partial class IFPInst : UserControl
         VerifySHA512();
     }
 
+    public void ExtractProg() {
+        txtCurTask.Text = "Extracting program files";
+        ZipFile.ExtractToDirectory($"{downloadLocation}/{appName}_{appVer}.zip", instPath);
+    }
+
     public void InstallProg() {
         CreateFolder();
         SetDownloadLoc();
         DownloadProgFile();
         VerifyPkg();
+        ExtractProg();
     }
 
     public IFPInst(string selAppName, string selAppVer, string selDl, string selSha256, string selSha512, string selInstPath)
