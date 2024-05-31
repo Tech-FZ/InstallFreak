@@ -1,5 +1,11 @@
 # InstallFreak Changelog
 
+## Version 0.0.4.8_proto
+
+- Instead of the depreciated WebClient, OctaneDownloader is used.
+- The verification process is in the woks.
+- Some minor corrections to the download location setter have been made.
+
 ## Version 0.0.4.7_proto
 
 - The page which actually installs the program is in the works.
