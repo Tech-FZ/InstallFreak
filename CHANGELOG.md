@@ -7,6 +7,7 @@
 - The third page now redirects to the install page when clicking "Next".
 - A Finish page has been created.
 - If the Installer ran into an error, it would redirect to a fail page.
+- File cleaning (for temporary files and failed installation attempts) has been implemented.
 
 ## Version 0.0.4.8_proto
 

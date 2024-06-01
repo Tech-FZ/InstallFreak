@@ -41,7 +41,31 @@ public partial class IFPInst : UserControl
         mainwin.Content = new IFPFinish();
     }
 
+    public void CleanUpTemp() {
+        txtCurTask.Text = "Cleaning up temporary files";
+
+        try {
+            Directory.Delete(downloadLocation, true);
+        }
+        
+        catch {
+
+        }
+    }
+
     public void InstFail(string rsFail) {
+        txtHeader.Text = "Installation failed! Reverting changes...";
+        txtCurTask.Text = "Deleting program files";
+
+        try {
+            Directory.Delete(instPath, true);
+        }
+        
+        catch {
+
+        }
+
+        CleanUpTemp();
         Window mainwin = (Window)this.GetVisualRoot();
         mainwin.Content = new IFPFail(rsFail);
     }
@@ -235,6 +259,7 @@ public partial class IFPInst : UserControl
         DownloadProgFile();
         VerifyPkg();
         ExtractProg();
+        CleanUpTemp();
         InstSuccess();
     }
 
