@@ -9,6 +9,11 @@
 - If the Installer ran into an error, it would redirect to a fail page.
 - File cleaning (for temporary files and failed installation attempts) has been implemented.
 
+### Known issues
+
+- The program is yet to be tested.
+- The program would download an older EmuGUI Pre-Release. Stable is not affected.
+
 ## Version 0.0.4.8_proto
 
 - Instead of the depreciated WebClient, OctaneDownloader is used.
