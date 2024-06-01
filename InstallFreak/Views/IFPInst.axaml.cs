@@ -41,9 +41,21 @@ public partial class IFPInst : UserControl
         mainwin.Content = new IFPFinish();
     }
 
+    public void InstFail(string rsFail) {
+        Window mainwin = (Window)this.GetVisualRoot();
+        mainwin.Content = new IFPFail(rsFail);
+    }
+
     public void CreateFolder() {
         txtCurTask.Text = $"Preparing installation path \"{instPath}\"";
-        Directory.CreateDirectory(instPath);
+
+        try {
+            Directory.CreateDirectory(instPath);
+        }
+        
+        catch (Exception ex) {
+            InstFail(ex.Message);
+        }
     }
 
     public void SetDownloadLoc() {
@@ -57,7 +69,13 @@ public partial class IFPInst : UserControl
             downloadLocation = $"{downloadLocation}{letterlist[rndmIdx]}";
         }
 
-        Directory.CreateDirectory(downloadLocation);
+        try {
+            Directory.CreateDirectory(downloadLocation);
+        }
+        
+        catch (Exception ex) {
+            InstFail(ex.Message);
+        }
     }
 
     public void DownloadEngine(string toDownload, string saveTo) {
@@ -118,9 +136,8 @@ public partial class IFPInst : UserControl
             engine.DownloadFile(toDownload, saveTo, _pauseTokenSource, _cancelTokenSource).Wait();
         }
 
-        catch
-        {
-            // ignored
+        catch (Exception ex) {
+            InstFail(ex.Message);
         }
     }
 
@@ -132,7 +149,7 @@ public partial class IFPInst : UserControl
         }
 
         catch (Exception ex) {
-            
+            InstFail(ex.Message);
         }
     }
 
@@ -160,7 +177,7 @@ public partial class IFPInst : UserControl
             }
 
             catch (Exception ex) {
-            
+                InstFail(ex.Message);
             }
         }
     }
@@ -189,7 +206,7 @@ public partial class IFPInst : UserControl
             }
 
             catch (Exception ex) {
-            
+                InstFail(ex.Message);
             }
         }
     }
@@ -202,7 +219,14 @@ public partial class IFPInst : UserControl
 
     public void ExtractProg() {
         txtCurTask.Text = "Extracting program files";
-        ZipFile.ExtractToDirectory($"{downloadLocation}/{appName}_{appVer}.zip", instPath);
+        try {
+            ZipFile.ExtractToDirectory($"{downloadLocation}/{appName}_{appVer}.zip", instPath);
+        }
+
+        catch (Exception ex) {
+            InstFail(ex.Message);
+        }
+        
     }
 
     public void InstallProg() {
@@ -211,7 +235,6 @@ public partial class IFPInst : UserControl
         DownloadProgFile();
         VerifyPkg();
         ExtractProg();
-
         InstSuccess();
     }
 
