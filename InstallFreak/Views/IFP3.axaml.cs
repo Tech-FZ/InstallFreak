@@ -38,7 +38,7 @@ public partial class IFP3 : UserControl
 
     public void InstProg(object sender, RoutedEventArgs args) {
         Window mainwin = (Window)this.GetVisualRoot();
-        mainwin.Content = new IFP3(appName, appVer, appDl, appSha256, appSha512, instPath);
+        mainwin.Content = new IFPInst(appName, appVer, appDl, appSha256, appSha512, instPath);
     }
 
     public void CloseProgram(object sender, RoutedEventArgs args)

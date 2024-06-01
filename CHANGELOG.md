@@ -1,5 +1,11 @@
 # InstallFreak Changelog
 
+## Version 0.0.4.9_proto
+
+### Changes
+
+- The third page now redirects to the install page when clicking "Next".
+
 ## Version 0.0.4.8_proto
 
 - Instead of the depreciated WebClient, OctaneDownloader is used.
