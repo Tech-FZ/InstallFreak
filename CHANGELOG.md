@@ -5,6 +5,7 @@
 ### Changes
 
 - The third page now redirects to the install page when clicking "Next".
+- A Finish page has been created.
 
 ## Version 0.0.4.8_proto
 

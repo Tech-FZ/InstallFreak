@@ -15,6 +15,7 @@ using Microsoft.Extensions.Configuration;
 using NUnit.Framework;
 using System.Security.Cryptography;
 using System.IO.Compression;
+using Avalonia.VisualTree;
 
 namespace InstallFreak.Views;
 
@@ -33,6 +34,12 @@ public partial class IFPInst : UserControl
             "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N",
             "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
         };
+
+    public void InstSuccess()
+    {
+        Window mainwin = (Window)this.GetVisualRoot();
+        mainwin.Content = new IFPFinish();
+    }
 
     public void CreateFolder() {
         txtCurTask.Text = $"Preparing installation path \"{instPath}\"";
@@ -204,6 +211,8 @@ public partial class IFPInst : UserControl
         DownloadProgFile();
         VerifyPkg();
         ExtractProg();
+
+        InstSuccess();
     }
 
     public IFPInst(string selAppName, string selAppVer, string selDl, string selSha256, string selSha512, string selInstPath)

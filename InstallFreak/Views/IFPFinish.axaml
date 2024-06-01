@@ -1,0 +1,26 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="InstallFreak.Views.IFPFinish">
+  <Grid HorizontalAlignment="Center" 
+      VerticalAlignment="Center" 
+      Width="750" 
+      Height="400"
+      ColumnDefinitions="Auto,*,*,*,*,*,*"
+      RowDefinitions="Auto,Auto,Auto,Auto, Auto">
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" 
+                   Text="Finished installing" FontSize="20" HorizontalAlignment="Center"
+                   TextWrapping="Wrap" Margin="10,0,10,15" />
+               
+        <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" TextWrapping="Wrap" Margin="10,0,10,15"
+            Text="You should now be able to use the program." x:Name="txtCanUse" HorizontalAlignment="Center" />
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="7" TextWrapping="Wrap" Margin="10,0,10,15"
+            Text="Click 'Finish' to close the program." x:Name="txtInstructClose" HorizontalAlignment="Center" />
+    
+        <Button Grid.Row="4" Grid.Column="6" HorizontalAlignment="Stretch" Content="Finish"
+          HorizontalContentAlignment="Center" Margin="10,0,10,15" Click="CloseProgram" /> 
+    </Grid>
+</UserControl>
