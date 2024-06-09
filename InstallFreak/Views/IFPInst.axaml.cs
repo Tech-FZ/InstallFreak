@@ -265,7 +265,7 @@ public partial class IFPInst : UserControl
         VerifyPkg();
         ExtractProg();
         CleanUpTemp();
-        Dispatcher.UIThread.InvokeAsync(() => InstSuccess());
+        Dispatcher.UIThread.Invoke(() => InstSuccess());
     }
 
     public IFPInst(string selAppName, string selAppVer, string selDl, string selSha256, string selSha512, string selInstPath)
