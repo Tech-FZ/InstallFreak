@@ -1,5 +1,12 @@
 # InstallFreak Changelog
 
+## Version 0.1.0.10_dev
+
+### Changes
+
+- As an effort to fix the InstallFreak issues, the randomizer for the temp folder has been removed.
+- A background worker is also there to potentially fix the issue.
+
 ## Version 0.0.4.9_proto
 
 ### Changes

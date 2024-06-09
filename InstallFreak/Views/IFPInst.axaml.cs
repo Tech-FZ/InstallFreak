@@ -16,6 +16,7 @@ using NUnit.Framework;
 using System.Security.Cryptography;
 using System.IO.Compression;
 using Avalonia.VisualTree;
+using System.ComponentModel;
 
 namespace InstallFreak.Views;
 
@@ -84,14 +85,7 @@ public partial class IFPInst : UserControl
 
     public void SetDownloadLoc() {
         txtCurTask.Text = "Setting download location";
-        downloadLocation = $"{Environment.SpecialFolder.UserProfile}\\AppData\\Local\\Temp\\IF-";
-
-        Random random = new Random();
-
-        for (int i = 0; i <= 32; i++) {
-            int rndmIdx = random.Next(0, letterlist.Length);
-            downloadLocation = $"{downloadLocation}{letterlist[rndmIdx]}";
-        }
+        downloadLocation = $"{Environment.SpecialFolder.UserProfile}\\AppData\\Local\\Temp\\IF-EmuGUI";
 
         try {
             Directory.CreateDirectory(downloadLocation);
@@ -272,6 +266,11 @@ public partial class IFPInst : UserControl
         appSha256 = selSha256;
         appSha512 = selSha512;
         instPath = selInstPath;
-        InstallProg();
+        //InstallProg();
+
+        var bgworker = new BackgroundWorker();
+        bgworker.DoWork += (sender, e) => {
+            InstallProg();
+        };
     }
 }
