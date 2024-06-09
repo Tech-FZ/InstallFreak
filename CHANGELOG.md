@@ -6,6 +6,8 @@
 
 - As an effort to fix the InstallFreak issues, the randomizer for the temp folder has been removed.
 - A background worker is also there to potentially fix the issue.
+- To spice things up, I changed the temp folder to the application data folder used by C#.
+- I also have to fix UI threading issues now.
 
 ## Version 0.0.4.9_proto
 

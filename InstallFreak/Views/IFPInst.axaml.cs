@@ -17,6 +17,7 @@ using System.Security.Cryptography;
 using System.IO.Compression;
 using Avalonia.VisualTree;
 using System.ComponentModel;
+using Avalonia.Threading;
 
 namespace InstallFreak.Views;
 
@@ -36,6 +37,8 @@ public partial class IFPInst : UserControl
             "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
         };
 
+    private void SetCurTaskText(string text) => txtCurTask.Text = text;
+
     public void InstSuccess()
     {
         Window mainwin = (Window)this.GetVisualRoot();
@@ -43,7 +46,8 @@ public partial class IFPInst : UserControl
     }
 
     public void CleanUpTemp() {
-        txtCurTask.Text = "Cleaning up temporary files";
+        Dispatcher.UIThread.Post(() => SetCurTaskText("Cleaning up temporary files"));
+        //txtCurTask.Text = "Cleaning up temporary files";
 
         try {
             Directory.Delete(downloadLocation, true);
@@ -56,6 +60,7 @@ public partial class IFPInst : UserControl
 
     public void InstFail(string rsFail) {
         txtHeader.Text = "Installation failed! Reverting changes...";
+        Dispatcher.UIThread.Post(() => SetCurTaskText("Deleting program files"));
         txtCurTask.Text = "Deleting program files";
 
         try {
@@ -72,7 +77,7 @@ public partial class IFPInst : UserControl
     }
 
     public void CreateFolder() {
-        txtCurTask.Text = $"Preparing installation path \"{instPath}\"";
+        txtCurTask.Text = $"Preparing installation path \"{instPath.ToString()}\"";
 
         try {
             Directory.CreateDirectory(instPath);
@@ -85,7 +90,7 @@ public partial class IFPInst : UserControl
 
     public void SetDownloadLoc() {
         txtCurTask.Text = "Setting download location";
-        downloadLocation = $"{Environment.SpecialFolder.UserProfile}\\AppData\\Local\\Temp\\IF-EmuGUI";
+        downloadLocation = $"{Environment.SpecialFolder.ApplicationData.ToString()}\\IF-EmuGUI";
 
         try {
             Directory.CreateDirectory(downloadLocation);
@@ -248,8 +253,8 @@ public partial class IFPInst : UserControl
     }
 
     public void InstallProg() {
-        CreateFolder();
         SetDownloadLoc();
+        CreateFolder();
         DownloadProgFile();
         VerifyPkg();
         ExtractProg();
@@ -270,7 +275,15 @@ public partial class IFPInst : UserControl
 
         var bgworker = new BackgroundWorker();
         bgworker.DoWork += (sender, e) => {
-            InstallProg();
+            //InstallProg();
+            CreateFolder();
+            SetDownloadLoc();
+            DownloadProgFile();
+            VerifyPkg();
+            ExtractProg();
+            CleanUpTemp();
+            InstSuccess();
         };
+        bgworker.RunWorkerAsync();
     }
 }
