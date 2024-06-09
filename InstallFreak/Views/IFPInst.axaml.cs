@@ -30,6 +30,7 @@ public partial class IFPInst : UserControl
     string? appSha512;
     string? instPath;
     string? downloadLocation;
+    Window mainwin;
 
     string[] letterlist = {
             "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o",
@@ -40,11 +41,8 @@ public partial class IFPInst : UserControl
     private void SetCurTaskText(string text) => txtCurTask.Text = text;
     private void SetHeaderText(string text) => txtHeader.Text = text;
 
-    public void InstSuccess()
-    {
-        Window mainwin = (Window)this.GetVisualRoot();
-        mainwin.Content = new IFPFinish();
-    }
+    private void InstSuccess() => mainwin.Content = new IFPFinish();
+    private void InsFailWinChange(string rsFail) => mainwin.Content = new IFPFail(rsFail);
 
     public void CleanUpTemp() {
         Dispatcher.UIThread.Post(() => SetCurTaskText("Cleaning up temporary files"));
@@ -74,8 +72,7 @@ public partial class IFPInst : UserControl
         }
 
         CleanUpTemp();
-        Window mainwin = (Window)this.GetVisualRoot();
-        mainwin.Content = new IFPFail(rsFail);
+        Dispatcher.UIThread.Post(() => InsFailWinChange(rsFail));
     }
 
     public void CreateFolder() {
@@ -268,7 +265,7 @@ public partial class IFPInst : UserControl
         VerifyPkg();
         ExtractProg();
         CleanUpTemp();
-        InstSuccess();
+        Dispatcher.UIThread.InvokeAsync(() => InstSuccess());
     }
 
     public IFPInst(string selAppName, string selAppVer, string selDl, string selSha256, string selSha512, string selInstPath)
@@ -280,6 +277,7 @@ public partial class IFPInst : UserControl
         appSha256 = selSha256;
         appSha512 = selSha512;
         instPath = selInstPath;
+        mainwin = (Window)this.GetVisualRoot();
         //InstallProg();
 
         var bgworker = new BackgroundWorker();
