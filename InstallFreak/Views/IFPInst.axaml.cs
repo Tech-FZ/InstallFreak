@@ -38,6 +38,7 @@ public partial class IFPInst : UserControl
         };
 
     private void SetCurTaskText(string text) => txtCurTask.Text = text;
+    private void SetHeaderText(string text) => txtHeader.Text = text;
 
     public void InstSuccess()
     {
@@ -59,9 +60,10 @@ public partial class IFPInst : UserControl
     }
 
     public void InstFail(string rsFail) {
-        txtHeader.Text = "Installation failed! Reverting changes...";
+        Dispatcher.UIThread.Post(() => SetHeaderText("Installation failed! Reverting changes..."));
+        //txtHeader.Text = "Installation failed! Reverting changes...";
         Dispatcher.UIThread.Post(() => SetCurTaskText("Deleting program files"));
-        txtCurTask.Text = "Deleting program files";
+        //txtCurTask.Text = "Deleting program files";
 
         try {
             Directory.Delete(instPath, true);
@@ -77,7 +79,8 @@ public partial class IFPInst : UserControl
     }
 
     public void CreateFolder() {
-        txtCurTask.Text = $"Preparing installation path \"{instPath.ToString()}\"";
+        Dispatcher.UIThread.Post(() => SetCurTaskText($"Preparing installation path \"{instPath.ToString()}\""));
+        //txtCurTask.Text = $"Preparing installation path \"{instPath.ToString()}\"";
 
         try {
             Directory.CreateDirectory(instPath);
@@ -89,7 +92,8 @@ public partial class IFPInst : UserControl
     }
 
     public void SetDownloadLoc() {
-        txtCurTask.Text = "Setting download location";
+        Dispatcher.UIThread.Post(() => SetCurTaskText("Setting download location"));
+        //txtCurTask.Text = "Setting download location";
         downloadLocation = $"{Environment.SpecialFolder.ApplicationData.ToString()}\\IF-EmuGUI";
 
         try {
@@ -165,7 +169,8 @@ public partial class IFPInst : UserControl
     }
 
     public void DownloadProgFile() {
-        txtCurTask.Text = "Downloading program files";
+        Dispatcher.UIThread.Post(() => SetCurTaskText("Downloading program files"));
+        //txtCurTask.Text = "Downloading program files";
 
         try {
             DownloadEngine(appDl, $"{downloadLocation}/{appName}_{appVer}.zip");
@@ -178,7 +183,8 @@ public partial class IFPInst : UserControl
 
     public void VerifySHA256() {
         if (appSha256 != "" && appSha256 != null) {
-            txtCurTask.Text = "Verifying file with SHA256";
+            Dispatcher.UIThread.Post(() => SetCurTaskText("Verifying file with SHA256"));
+            //txtCurTask.Text = "Verifying file with SHA256";
 
             try {
                 DownloadEngine(appSha256, $"{downloadLocation}/{appName}_{appVer}.zip.sha256");
@@ -207,7 +213,8 @@ public partial class IFPInst : UserControl
 
     public void VerifySHA512() {
         if (appSha512 != "" && appSha512 != null) {
-            txtCurTask.Text = "Verifying file with SHA512";
+            Dispatcher.UIThread.Post(() => SetCurTaskText("Verifying file with SHA512"));
+            //txtCurTask.Text = "Verifying file with SHA512";
 
             try {
                 DownloadEngine(appSha512, $"{downloadLocation}/{appName}_{appVer}.zip.sha512");
@@ -235,13 +242,15 @@ public partial class IFPInst : UserControl
     }
 
     public void VerifyPkg() {
-        txtCurTask.Text = "Checking for verification files";
+        Dispatcher.UIThread.Post(() => SetCurTaskText("Checking for verification files"));
+        //txtCurTask.Text = "Checking for verification files";
         VerifySHA256();
         VerifySHA512();
     }
 
     public void ExtractProg() {
-        txtCurTask.Text = "Extracting program files";
+        Dispatcher.UIThread.Post(() => SetCurTaskText("Extracting program files"));
+        //txtCurTask.Text = "Extracting program files";
         try {
             ZipFile.ExtractToDirectory($"{downloadLocation}/{appName}_{appVer}.zip", instPath);
         }
