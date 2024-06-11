@@ -1,5 +1,9 @@
 # InstallFreak Changelog
 
+## Version 0.1.1.11_dev
+
+- EmuGUI 2.0 Stable is there.
+
 ## Version 0.1.0.10_dev
 
 ### Changes

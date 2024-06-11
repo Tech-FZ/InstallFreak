@@ -9,8 +9,8 @@ namespace InstallFreak.ViewModels {
         public MainWindowViewModel() {
             var apps = new List<InstallFreakApps> {
                 new InstallFreakApps(
-                    false, "EmuGUI", "1.2.3.5513", "https://www.github.com/Tech-FZ/EmuGUI/releases/download/v1.2.3.5513/EmuGUI_v1.2.3.5513_Win_amd64.zip",
-                    "https://www.github.com/Tech-FZ/EmuGUI/releases/download/v1.2.3.5513/EmuGUI_v1.2.3.5513_Win_amd64.zip.sha256", "",
+                    false, "EmuGUI", "2.0.0.5611", "https://github.com/Tech-FZ/EmuGUI/releases/download/v2.0.0.5611/EmuGUI_v2.0.0.5611_Win_amd64.zip",
+                    "https://github.com/Tech-FZ/EmuGUI/releases/download/v2.0.0.5611/EmuGUI_v2.0.0.5611_Win_amd64.zip.sha256", "",
                     "Latest stable version"),
 
                 new InstallFreakApps(
