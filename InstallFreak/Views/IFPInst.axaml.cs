@@ -18,6 +18,7 @@ using System.IO.Compression;
 using Avalonia.VisualTree;
 using System.ComponentModel;
 using Avalonia.Threading;
+using System.Diagnostics;
 
 namespace InstallFreak.Views;
 
@@ -41,8 +42,30 @@ public partial class IFPInst : UserControl
     private void SetCurTaskText(string text) => txtCurTask.Text = text;
     private void SetHeaderText(string text) => txtHeader.Text = text;
 
-    private void InstSuccess() => mainwin.Content = new IFPFinish();
-    private void InsFailWinChange(string rsFail) => mainwin.Content = new IFPFail(rsFail);
+    private void InstSuccess() {
+        var succeedScript = "IF_Succeeded.ps1";
+
+        var startInfo = new ProcessStartInfo() {
+            FileName = "powershell.exe",
+            Arguments = $" - NoProfile -ExecutionPolicy ByPass -File \"{succeedScript}\"",
+            UseShellExecute = false
+        };
+        
+        Process.Start(startInfo);
+        mainwin.Close();
+    }
+    private void InsFailWinChange(string rsFail) {
+        var failScript = "IF_Failed.ps1";
+
+        var startInfo = new ProcessStartInfo() {
+            FileName = "powershell.exe",
+            Arguments = $" - NoProfile -ExecutionPolicy ByPass -File \"{failScript}\"",
+            UseShellExecute = false
+        };
+        
+        Process.Start(startInfo);
+        mainwin.Close();
+    }
 
     public void CleanUpTemp() {
         Dispatcher.UIThread.Post(() => SetCurTaskText("Cleaning up temporary files"));
