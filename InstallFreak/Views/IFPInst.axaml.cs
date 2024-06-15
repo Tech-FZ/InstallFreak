@@ -41,9 +41,10 @@ public partial class IFPInst : UserControl
 
     private void SetCurTaskText(string text) => txtCurTask.Text = text;
     private void SetHeaderText(string text) => txtHeader.Text = text;
+    private void SetPatText(string text) => txtPatience.Text = text;
 
     private void InstSuccess() {
-        var succeedScript = "IF_Succeeded.ps1";
+        /* var succeedScript = "IF_Succeeded.ps1";
 
         var startInfo = new ProcessStartInfo() {
             FileName = "powershell.exe",
@@ -52,10 +53,14 @@ public partial class IFPInst : UserControl
         };
         
         Process.Start(startInfo);
-        mainwin.Close();
+        mainwin.Close(); */
+
+        Dispatcher.UIThread.Post(() => SetHeaderText("Installation succeeded!"));
+        Dispatcher.UIThread.Post(() => SetPatText("InstallFreak was able to install EmuGUI."));
+        Dispatcher.UIThread.Post(() => SetCurTaskText("Please click on the Close button on the title bar to exit."));
     }
     private void InsFailWinChange(string rsFail) {
-        var failScript = "IF_Failed.ps1";
+        /* var failScript = "IF_Failed.ps1";
 
         var startInfo = new ProcessStartInfo() {
             FileName = "powershell.exe",
@@ -64,7 +69,11 @@ public partial class IFPInst : UserControl
         };
         
         Process.Start(startInfo);
-        mainwin.Close();
+        mainwin.Close(); */
+
+        Dispatcher.UIThread.Post(() => SetHeaderText("Installation failed!"));
+        Dispatcher.UIThread.Post(() => SetPatText("InstallFreak was not able to install EmuGUI. All changes have been reverted."));
+        Dispatcher.UIThread.Post(() => SetCurTaskText("Please click on the Close button on the title bar to exit."));
     }
 
     public void CleanUpTemp() {

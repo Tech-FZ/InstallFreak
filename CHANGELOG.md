@@ -2,10 +2,17 @@
 
 ## Version 0.1.1.11_dev
 
+### Changes
+
 - EmuGUI 2.0 Stable is there.
 - I'm trying to replace the existing failed/succeeded pages with PowerShell scripts as fixing former doesn't work.
 - The PowerShell scripts had to be fixed at first.
 - Even though I tried to implement PowerShell scripts, it didn't even open as of yet. (15th June, 2024 at 10:51 AM CEST)
+- An alternative approach using the install page for failed/succeeded messages as well is also being tested.
+
+### Known issues
+
+- InstallFreak is hard to get users pleased properly.
 
 ## Version 0.1.0.10_dev
 
