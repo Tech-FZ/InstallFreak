@@ -3,6 +3,7 @@
 ## Version 0.1.1.11_dev
 
 - EmuGUI 2.0 Stable is there.
+- I'm trying to replace the existing failed/succeeded pages with PowerShell scripts as fixing former doesn't work.
 
 ## Version 0.1.0.10_dev
 

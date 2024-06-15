@@ -1,0 +1,1 @@
+$null = Show-MessageBox -Message "InstallFreak failed to install EmuGUI and therefore reverted all changes it made. Please press OK to close the window." "InstallFreak - Setup failed"
