@@ -1,5 +1,15 @@
 # InstallFreak Changelog
 
+## Version 0.2.0.12_dev
+
+### Changes
+
+- The redundant PowerShell scripts have been removed.
+
+### Known issues
+
+- The "Browse" button doesn't work yet.
+
 ## Version 0.1.1.11_dev
 
 ### Changes
