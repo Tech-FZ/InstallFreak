@@ -18,6 +18,12 @@ public partial class IFP2 : UserControl
         //mainwin = recMainWin;
     }
 
+    public void BrowseForFolder(object sender, RoutedEventArgs args)
+    {
+        Window mainwin = (Window)this.GetVisualRoot();
+        
+    }
+
     public void ChangeToFirstPage(object sender, RoutedEventArgs args)
     {
         Window mainwin = (Window)this.GetVisualRoot();

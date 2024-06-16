@@ -35,7 +35,8 @@
         <TextBox Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="4" Margin="10,0,10,15" x:Name="txtBInstPath" />
 
         <Button Grid.Row="2" Grid.Column="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="Browse"
-          HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="32" Margin="10,0,10,15" />
+          HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="32" Margin="10,0,10,15"
+          Click="BrowseForFolder" />
 
         <Button Grid.Row="3" Grid.Column="4" HorizontalAlignment="Stretch" Content="Previous"
           HorizontalContentAlignment="Center" Margin="10,0,10,15" Click="ChangeToFirstPage" />
