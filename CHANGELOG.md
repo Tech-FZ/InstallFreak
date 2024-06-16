@@ -6,6 +6,7 @@
 
 - The redundant PowerShell scripts have been removed.
 - The "Browse" button has a function prepared, but it ~~doesn't work yet~~ still needs testing.
+    - Update 16th June, 2024 at 09:54 AM CEST: I had to fix the functions.
 
 ### Known issues
 

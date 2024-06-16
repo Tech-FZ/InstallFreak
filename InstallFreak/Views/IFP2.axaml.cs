@@ -38,7 +38,7 @@ public partial class IFP2 : UserControl
         if (files.Count >= 1)
         {
             var selFolder = files[0];
-            string folderPath = selectedFolder.Path.LocalPath;
+            string folderPath = selFolder.Path.LocalPath;
             return folderPath;
         }
 
@@ -47,7 +47,7 @@ public partial class IFP2 : UserControl
         }
     }
 
-    public async void BrowseForFolderAsync(object sender, RoutedEventArgs args) {
+    public async void BrowseForFolder(object sender, RoutedEventArgs args) {
         string? folderPath = await BrowseForFolderAsync();
 
         if (folderPath != null) {
