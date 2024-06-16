@@ -5,7 +5,7 @@
 ### Changes
 
 - The redundant PowerShell scripts have been removed.
-- The "Browse" button has a function prepared, but it doesn't work yet.
+- The "Browse" button has a function prepared, but it ~~doesn't work yet~~ still needs testing.
 
 ### Known issues
 
