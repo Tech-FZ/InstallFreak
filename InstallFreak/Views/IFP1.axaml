@@ -8,19 +8,19 @@
       VerticalAlignment="Center" 
       Width="750" 
       Height="400"
-      ColumnDefinitions="Auto,*,*,*,*"
-      RowDefinitions="Auto,Auto,*,Auto">
-        <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" 
+      ColumnDefinitions="Auto,*,*,*,*,*,*"
+      RowDefinitions="Auto,Auto,Auto,Auto">
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" 
                    Text="Welcome to InstallFreak!" FontSize="20" HorizontalAlignment="Center"
                    TextWrapping="Wrap" Margin="10,0,10,15" />
                
-        <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" TextWrapping="Wrap" Margin="10,0,10,15"
+        <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" TextWrapping="Wrap" Margin="10,0,10,15"
             Text="InstallFreak will be your guide for the InstallFreak setup." HorizontalAlignment="Center" />
     
-        <Button Grid.Row="3" Grid.Column="2" HorizontalAlignment="Stretch" Content="Next" Margin="10,0,10,15"
+        <Button Grid.Row="3" Grid.Column="5" HorizontalAlignment="Stretch" Content="Next" Margin="10,0,10,15"
         HorizontalContentAlignment="Center" Click="ChangeToSecondPage" />
     
-        <Button Grid.Row="3" Grid.Column="3" HorizontalAlignment="Stretch" Content="Cancel" Margin="10,0,10,15"
+        <Button Grid.Row="3" Grid.Column="6" HorizontalAlignment="Stretch" Content="Cancel" Margin="10,0,10,15"
         HorizontalContentAlignment="Center" Click="CloseProgram" /> 
     </Grid>
 </UserControl>
