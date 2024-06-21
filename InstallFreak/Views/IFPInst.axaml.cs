@@ -31,6 +31,8 @@ public partial class IFPInst : UserControl
     string? appSha512;
     string? instPath;
     string? downloadLocation;
+    bool? startMenShc;
+    bool? deskShc;
     Window mainwin;
 
     string[] letterlist = {
@@ -300,7 +302,7 @@ public partial class IFPInst : UserControl
         Dispatcher.UIThread.Invoke(() => InstSuccess());
     }
 
-    public IFPInst(string selAppName, string selAppVer, string selDl, string selSha256, string selSha512, string selInstPath)
+    public IFPInst(string selAppName, string selAppVer, string selDl, string selSha256, string selSha512, string selInstPath, bool? startMenu, bool? desktop)
     {
         InitializeComponent();
         appName = selAppName;
@@ -309,6 +311,8 @@ public partial class IFPInst : UserControl
         appSha256 = selSha256;
         appSha512 = selSha512;
         instPath = selInstPath;
+        startMenShc = startMenu;
+        deskShc = desktop;
         mainwin = (Window)this.GetVisualRoot();
         //InstallProg();
 
