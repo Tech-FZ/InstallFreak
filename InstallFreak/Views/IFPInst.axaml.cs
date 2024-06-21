@@ -292,15 +292,6 @@ public partial class IFPInst : UserControl
         
     }
 
-    public void InstallProg() {
-        SetDownloadLoc();
-        CreateFolder();
-        DownloadProgFile();
-        VerifyPkg();
-        ExtractProg();
-        CleanUpTemp();
-        Dispatcher.UIThread.Invoke(() => InstSuccess());
-    }
 
     public IFPInst(string selAppName, string selAppVer, string selDl, string selSha256, string selSha512, string selInstPath, bool? startMenu, bool? desktop)
     {
@@ -314,11 +305,9 @@ public partial class IFPInst : UserControl
         startMenShc = startMenu;
         deskShc = desktop;
         mainwin = (Window)this.GetVisualRoot();
-        //InstallProg();
 
         var bgworker = new BackgroundWorker();
         bgworker.DoWork += (sender, e) => {
-            //InstallProg();
             CreateFolder();
             SetDownloadLoc();
             DownloadProgFile();
