@@ -1,5 +1,15 @@
 # InstallFreak Changelog
 
+## Version 0.3.0.13_dev
+
+### Changes
+
+- The buttons have been moved down on the third page.
+
+### Known issues
+
+None as of now
+
 ## Version 0.2.0.12_dev
 
 ### Changes
