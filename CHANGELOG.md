@@ -5,10 +5,11 @@
 ### Changes
 
 - The buttons have been moved down on the third page.
+- Checkboxes for creating shortcuts have been made.
 
 ### Known issues
 
-None as of now
+- The shortcut checkboxes don't work yet.
 
 ## Version 0.2.0.12_dev
 

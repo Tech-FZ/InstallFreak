@@ -22,6 +22,14 @@
 
         <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="7" TextWrapping="Wrap" Margin="10,0,10,15"
             Text="Installation Path" x:Name="txtInstallPath" HorizontalAlignment="Center" />
+
+        <CheckBox x:Name="chbStartMenuShortcut" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Margin="10,0,10,15">
+          Create start menu shortcut  
+        </CheckBox>
+
+        <CheckBox x:Name="chbDesktopShortcut" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="3" Margin="10,0,10,15">
+          Create desktop shortcut  
+        </CheckBox>
     
         <Button Grid.Row="5" Grid.Column="4" HorizontalAlignment="Stretch" Content="Previous"
           HorizontalContentAlignment="Center" Margin="10,0,10,15" Click="ChangeToSecondPage" />
