@@ -19,6 +19,7 @@ using Avalonia.VisualTree;
 using System.ComponentModel;
 using Avalonia.Threading;
 using System.Diagnostics;
+using IWshRuntimeLibrary;
 
 namespace InstallFreak.Views;
 
@@ -176,7 +177,7 @@ public partial class IFPInst : UserControl
                 DoneCallback = _ =>
                 {
                     Console.WriteLine("Done!");
-                    Assert.That(File.Exists(saveTo));
+                    Assert.That(System.IO.File.Exists(saveTo));
                 },
                 ProgressCallback = Console.WriteLine,
                 NumRetries = 20,
@@ -292,6 +293,24 @@ public partial class IFPInst : UserControl
         
     }
 
+    public void CreateShortcut(string shctype)
+    {
+        if (shctype == "desktop") {
+            var shell = new WshShell();
+            var shortcut = (IWshShortcut)shell.CreateShortcut($"{Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)}\\Desktop\\EmuGUI.lnk");
+            shortcut.TargetPath = $"{instPath}\\EmuGUI_v{appVer}_Win_amd64\\emugui.exe";
+            shortcut.Description = "Making QEMU emulation easier";
+            shortcut.Save();
+        }
+        
+        else if (shctype == "start") {
+            var shell = new WshShell();
+            var shortcut = (IWshShortcut)shell.CreateShortcut($"{Environment.GetFolderPath(Environment.SpecialFolder.StartMenu)}\\Programs\\EmuGUI.lnk");
+            shortcut.TargetPath = $"{instPath}\\EmuGUI_v{appVer}_Win_amd64\\emugui.exe";
+            shortcut.Description = "Making QEMU emulation easier";
+            shortcut.Save();
+        }
+    }
 
     public IFPInst(string selAppName, string selAppVer, string selDl, string selSha256, string selSha512, string selInstPath, bool? startMenu, bool? desktop)
     {
@@ -313,6 +332,15 @@ public partial class IFPInst : UserControl
             DownloadProgFile();
             VerifyPkg();
             ExtractProg();
+
+            if (startMenShc == true) {
+                CreateShortcut("start");
+            }
+
+            if (deskShc == true) {
+                CreateShortcut("desktop");
+            }
+
             CleanUpTemp();
             InstSuccess();
         };

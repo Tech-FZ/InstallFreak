@@ -7,6 +7,7 @@
 - The buttons have been moved down on the third page.
 - Checkboxes for creating shortcuts have been made.
     - Their variables are passed to the install page.
+    - The shortcuts should now be created by InstallFreak.
 - The InstallProg function has been removed from the install page.
 
 ### Known issues
