@@ -9,6 +9,7 @@
     - Their variables are passed to the install page.
     - The shortcuts should now be created by InstallFreak.
 - The InstallProg function has been removed from the install page.
+- InstallFreak would now download EmuGUI 2.0.3.
 
 ### Known issues
 
