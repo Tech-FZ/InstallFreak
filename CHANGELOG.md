@@ -7,6 +7,10 @@
 - Some commented-out code has been removed from the IFPInst file.
 - When SHA hashes don't match, the installer fails now.
 
+### Known issues
+
+- EmuGUI 2.0.3 can no longer be installed by InstallFreak because of the SHA fail condition. Further examination will follow.
+
 ## Version 0.3.0.13_dev
 
 ### Changes

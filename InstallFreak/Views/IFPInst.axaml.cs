@@ -35,6 +35,7 @@ public partial class IFPInst : UserControl
     bool? startMenShc;
     bool? deskShc;
     Window mainwin;
+    bool failed = false;
 
     string[] letterlist = {
             "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o",
@@ -71,6 +72,7 @@ public partial class IFPInst : UserControl
     }
 
     public void InstFail(string rsFail) {
+        failed = true;
         Dispatcher.UIThread.Post(() => SetHeaderText("Installation failed! Reverting changes..."));
         Dispatcher.UIThread.Post(() => SetCurTaskText("Deleting program files"));
 
@@ -297,22 +299,22 @@ public partial class IFPInst : UserControl
 
         var bgworker = new BackgroundWorker();
         bgworker.DoWork += (sender, e) => {
-            CreateFolder();
-            SetDownloadLoc();
-            DownloadProgFile();
-            VerifyPkg();
-            ExtractProg();
+            if (failed == false) CreateFolder();
+            if (failed == false) SetDownloadLoc();
+            if (failed == false) DownloadProgFile();
+            if (failed == false) VerifyPkg();
+            if (failed == false) ExtractProg();
 
-            if (startMenShc == true) {
+            if (startMenShc == true && failed == false) {
                 CreateShortcut("start");
             }
 
-            if (deskShc == true) {
+            if (deskShc == true && failed == false) {
                 CreateShortcut("desktop");
             }
 
-            CleanUpTemp();
-            InstSuccess();
+            if (failed == false) CleanUpTemp();
+            if (failed == false) InstSuccess();
         };
         bgworker.RunWorkerAsync();
     }
