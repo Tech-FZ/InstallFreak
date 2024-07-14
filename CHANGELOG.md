@@ -1,5 +1,11 @@
 # InstallFreak Changelog
 
+## Version 0.3.1.14_dev
+
+### Changes
+
+- Some commented-out code has been removed from the IFPInst file.
+
 ## Version 0.3.0.13_dev
 
 ### Changes

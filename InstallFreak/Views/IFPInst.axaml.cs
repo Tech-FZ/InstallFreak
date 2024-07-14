@@ -47,33 +47,11 @@ public partial class IFPInst : UserControl
     private void SetPatText(string text) => txtPatience.Text = text;
 
     private void InstSuccess() {
-        /* var succeedScript = "IF_Succeeded.ps1";
-
-        var startInfo = new ProcessStartInfo() {
-            FileName = "powershell.exe",
-            Arguments = $" - NoProfile -ExecutionPolicy ByPass -File \"{succeedScript}\"",
-            UseShellExecute = false
-        };
-        
-        Process.Start(startInfo);
-        mainwin.Close(); */
-
         Dispatcher.UIThread.Post(() => SetHeaderText("Installation succeeded!"));
         Dispatcher.UIThread.Post(() => SetPatText("InstallFreak was able to install EmuGUI."));
         Dispatcher.UIThread.Post(() => SetCurTaskText("Please click on the Close button on the title bar to exit."));
     }
     private void InsFailWinChange(string rsFail) {
-        /* var failScript = "IF_Failed.ps1";
-
-        var startInfo = new ProcessStartInfo() {
-            FileName = "powershell.exe",
-            Arguments = $" - NoProfile -ExecutionPolicy ByPass -File \"{failScript}\"",
-            UseShellExecute = false
-        };
-        
-        Process.Start(startInfo);
-        mainwin.Close(); */
-
         Dispatcher.UIThread.Post(() => SetHeaderText("Installation failed!"));
         Dispatcher.UIThread.Post(() => SetPatText("InstallFreak was not able to install EmuGUI. All changes have been reverted."));
         Dispatcher.UIThread.Post(() => SetCurTaskText("Please click on the Close button on the title bar to exit."));
