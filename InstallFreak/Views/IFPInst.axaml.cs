@@ -90,7 +90,6 @@ public partial class IFPInst : UserControl
 
     public void CreateFolder() {
         Dispatcher.UIThread.Post(() => SetCurTaskText($"Preparing installation path \"{instPath.ToString()}\""));
-        //txtCurTask.Text = $"Preparing installation path \"{instPath.ToString()}\"";
 
         try {
             Directory.CreateDirectory(instPath);
@@ -103,7 +102,6 @@ public partial class IFPInst : UserControl
 
     public void SetDownloadLoc() {
         Dispatcher.UIThread.Post(() => SetCurTaskText("Setting download location"));
-        //txtCurTask.Text = "Setting download location";
         downloadLocation = $"{Environment.SpecialFolder.ApplicationData.ToString()}\\IF-EmuGUI";
 
         try {
@@ -180,7 +178,6 @@ public partial class IFPInst : UserControl
 
     public void DownloadProgFile() {
         Dispatcher.UIThread.Post(() => SetCurTaskText("Downloading program files"));
-        //txtCurTask.Text = "Downloading program files";
 
         try {
             DownloadEngine(appDl, $"{downloadLocation}/{appName}_{appVer}.zip");
@@ -194,7 +191,6 @@ public partial class IFPInst : UserControl
     public void VerifySHA256() {
         if (appSha256 != "" && appSha256 != null) {
             Dispatcher.UIThread.Post(() => SetCurTaskText("Verifying file with SHA256"));
-            //txtCurTask.Text = "Verifying file with SHA256";
 
             try {
                 DownloadEngine(appSha256, $"{downloadLocation}/{appName}_{appVer}.zip.sha256");
@@ -224,7 +220,6 @@ public partial class IFPInst : UserControl
     public void VerifySHA512() {
         if (appSha512 != "" && appSha512 != null) {
             Dispatcher.UIThread.Post(() => SetCurTaskText("Verifying file with SHA512"));
-            //txtCurTask.Text = "Verifying file with SHA512";
 
             try {
                 DownloadEngine(appSha512, $"{downloadLocation}/{appName}_{appVer}.zip.sha512");
@@ -253,14 +248,13 @@ public partial class IFPInst : UserControl
 
     public void VerifyPkg() {
         Dispatcher.UIThread.Post(() => SetCurTaskText("Checking for verification files"));
-        //txtCurTask.Text = "Checking for verification files";
         VerifySHA256();
         VerifySHA512();
     }
 
     public void ExtractProg() {
         Dispatcher.UIThread.Post(() => SetCurTaskText("Extracting program files"));
-        //txtCurTask.Text = "Extracting program files";
+        
         try {
             ZipFile.ExtractToDirectory($"{downloadLocation}/{appName}_{appVer}.zip", instPath);
         }
