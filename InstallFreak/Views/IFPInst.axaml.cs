@@ -72,9 +72,7 @@ public partial class IFPInst : UserControl
 
     public void InstFail(string rsFail) {
         Dispatcher.UIThread.Post(() => SetHeaderText("Installation failed! Reverting changes..."));
-        //txtHeader.Text = "Installation failed! Reverting changes...";
         Dispatcher.UIThread.Post(() => SetCurTaskText("Deleting program files"));
-        //txtCurTask.Text = "Deleting program files";
 
         try {
             Directory.Delete(instPath, true);
