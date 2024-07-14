@@ -5,6 +5,7 @@
 ### Changes
 
 - Some commented-out code has been removed from the IFPInst file.
+- When SHA hashes don't match, the installer fails now.
 
 ## Version 0.3.0.13_dev
 

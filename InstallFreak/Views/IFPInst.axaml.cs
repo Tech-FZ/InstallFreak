@@ -203,7 +203,7 @@ public partial class IFPInst : UserControl
                 string hashStr = BitConverter.ToString(hashValue).Replace("-", String.Empty);
                 
                 if (hashStr != shaSplit[0]) {
-                    //insert code for aborting installation
+                    InstFail("SHA256 hashes don't match");
                 }
 
                 filestream.Close();
@@ -232,7 +232,7 @@ public partial class IFPInst : UserControl
                 string hashStr = BitConverter.ToString(hashValue).Replace("-", String.Empty);
                 
                 if (hashStr != shaSplit[0]) {
-                    //insert code for aborting installation
+                    InstFail("SHA512 hashes don't match");
                 }
 
                 filestream.Close();
