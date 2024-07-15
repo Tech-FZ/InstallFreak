@@ -20,8 +20,8 @@
         <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="7" TextWrapping="Wrap" Margin="10,0,10,15"
             Text="Current task" x:Name="txtCurTask" HorizontalAlignment="Center" />
 
-        <!-- <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="7" TextWrapping="Wrap" Margin="10,0,10,15"
-            Text="Progress: 0 %" x:Name="txtProgress" HorizontalAlignment="Center" /> -->
+        <ProgressBar Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="7" Margin="10,0,10,15"
+         x:Name="txtProgress" HorizontalAlignment="Center" />
     
         <!-- <Button Grid.Row="4" Grid.Column="6" HorizontalAlignment="Stretch" Content="Cancel"
           HorizontalContentAlignment="Center" Margin="10,0,10,15" Click="CloseProgram" />  -->

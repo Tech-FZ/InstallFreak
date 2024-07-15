@@ -6,6 +6,7 @@
 
 - Some commented-out code has been removed from the IFPInst file.
 - When SHA hashes don't match, the installer fails now.
+- An experimental progressbar has been added.
 
 ### Known issues
 

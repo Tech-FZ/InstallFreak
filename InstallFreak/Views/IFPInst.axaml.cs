@@ -46,6 +46,7 @@ public partial class IFPInst : UserControl
     private void SetCurTaskText(string text) => txtCurTask.Text = text;
     private void SetHeaderText(string text) => txtHeader.Text = text;
     private void SetPatText(string text) => txtPatience.Text = text;
+    private void SetProgressText(double percentage) => txtProgress.Value = percentage;
 
     private void InstSuccess() {
         Dispatcher.UIThread.Post(() => SetHeaderText("Installation succeeded!"));
@@ -298,6 +299,7 @@ public partial class IFPInst : UserControl
         mainwin = (Window)this.GetVisualRoot();
 
         var bgworker = new BackgroundWorker();
+
         bgworker.DoWork += (sender, e) => {
             if (failed == false) CreateFolder();
             if (failed == false) SetDownloadLoc();
@@ -316,6 +318,13 @@ public partial class IFPInst : UserControl
             if (failed == false) CleanUpTemp();
             if (failed == false) InstSuccess();
         };
+
+        bgworker.ProgressChanged += (sender, e) => {
+            Dispatcher.UIThread.Post(() => SetProgressText(e.ProgressPercentage));
+        };
+
         bgworker.RunWorkerAsync();
+
+        
     }
 }
