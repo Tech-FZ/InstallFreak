@@ -9,6 +9,7 @@
 - An experimental progressbar has been added.
 - A debug line has been added to the InstallFreak Install Page for easier debugging.
 - With its help, I could fix the SHA issues.
+- InstallFreak would now install EmuGUI 2.0.5.
 
 ### Known issues
 
