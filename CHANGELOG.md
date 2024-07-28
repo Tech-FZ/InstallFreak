@@ -8,10 +8,11 @@
 - When SHA hashes don't match, the installer fails now.
 - An experimental progressbar has been added.
 - A debug line has been added to the InstallFreak Install Page for easier debugging.
+- With its help, I could fix the SHA issues.
 
 ### Known issues
 
-- EmuGUI 2.0.3 can no longer be installed by InstallFreak because of the SHA fail condition. Further examination will follow.
+- ~~EmuGUI 2.0.3 can no longer be installed by InstallFreak because of the SHA fail condition. Further examination will follow.~~ Fixed by Tech-FZ
 
 ## Version 0.3.0.13_dev
 

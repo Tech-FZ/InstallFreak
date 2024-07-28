@@ -204,7 +204,7 @@ public partial class IFPInst : UserControl
                 filestream = new FileStream($"{downloadLocation}/{appName}_{appVer}.zip", FileMode.Open);
                 filestream.Position = 0;
                 byte[] hashValue = sha256mod.ComputeHash(filestream);
-                string hashStr = BitConverter.ToString(hashValue).Replace("-", String.Empty);
+                string hashStr = BitConverter.ToString(hashValue).Replace("-", String.Empty).ToLower();
 
                 Dispatcher.UIThread.Post(() => SetDebugText($"Program: {hashStr} | SHA256: {shaSplit[0]}"));
                 
