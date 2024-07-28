@@ -22,6 +22,9 @@
 
         <ProgressBar Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="7" Margin="10,0,10,15"
          x:Name="txtProgress" HorizontalAlignment="Center" />
+
+        <TextBlock Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="7" Margin="10,0,10,15" TextWrapping="Wrap" 
+         x:Name="txtDebug" HorizontalAlignment="Center" />
     
         <!-- <Button Grid.Row="4" Grid.Column="6" HorizontalAlignment="Stretch" Content="Cancel"
           HorizontalContentAlignment="Center" Margin="10,0,10,15" Click="CloseProgram" />  -->

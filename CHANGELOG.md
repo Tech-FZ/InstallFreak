@@ -7,6 +7,7 @@
 - Some commented-out code has been removed from the IFPInst file.
 - When SHA hashes don't match, the installer fails now.
 - An experimental progressbar has been added.
+- A debug line has been added to the InstallFreak Install Page for easier debugging.
 
 ### Known issues
 

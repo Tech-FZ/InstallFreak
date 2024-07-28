@@ -46,6 +46,7 @@ public partial class IFPInst : UserControl
     private void SetCurTaskText(string text) => txtCurTask.Text = text;
     private void SetHeaderText(string text) => txtHeader.Text = text;
     private void SetPatText(string text) => txtPatience.Text = text;
+    private void SetDebugText(string text) => txtDebug.Text = text;
     private void SetProgressText(double percentage) => txtProgress.Value = percentage;
 
     private void InstSuccess() {
@@ -204,6 +205,8 @@ public partial class IFPInst : UserControl
                 filestream.Position = 0;
                 byte[] hashValue = sha256mod.ComputeHash(filestream);
                 string hashStr = BitConverter.ToString(hashValue).Replace("-", String.Empty);
+
+                Dispatcher.UIThread.Post(() => SetDebugText($"Program: {hashStr} | SHA256: {shaSplit[0]}"));
                 
                 if (hashStr != shaSplit[0]) {
                     InstFail("SHA256 hashes don't match");
