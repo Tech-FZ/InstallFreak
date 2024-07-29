@@ -1,5 +1,13 @@
 # InstallFreak Changelog
 
+## InstallFreakwork 2024.7.0.1_dev
+
+### InstallFreak 0.4.0.15_dev
+
+**Changes**
+
+- InstallFreak wants to have admin rights now.
+
 ## Version 0.3.1.14_dev
 
 ### Changes
