@@ -7,6 +7,7 @@
 **Changes**
 
 - InstallFreak wants to have admin rights now.
+- InstallFreak would now install EmuGUI 2.0.6.
 
 ## Version 0.3.1.14_dev
 
