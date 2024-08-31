@@ -7,7 +7,7 @@
 **Changes**
 
 - InstallFreak wants to have admin rights now.
-- InstallFreak would now install EmuGUI 2.0.6.
+- InstallFreak would now install EmuGUI ~~2.0.6~~ 2.0.8 and EmuGUI Pre-Release 2.1.0.5700_dev (latter won't install due to SHA file issues).
 
 ## Version 0.3.1.14_dev
 
